@@ -9,6 +9,7 @@ class MultipleProduct(models.TransientModel):
 
     def action_add_product(self):
         if self._context.get('active_model') == 'sale.order':
+            print(self._context.get('active_ids'))
             self.env['sale.order'].browse(self._context.get('active_ids')).update({
                 'order_line': [(fields.Command.create({
                     'product_id': record.id

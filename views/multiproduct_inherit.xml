@@ -7,7 +7,7 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//button[@name='action_confirm']" position="after">
+                <xpath expr="//field[@name='order_line']" position="before">
                     <button name="%(multiple_product.add_product_wizard)d" string="Add Multiple Product" type="action"
                             class="btn btn-primary"/>
                 </xpath>
@@ -19,7 +19,7 @@
             <field name="model">purchase.order</field>
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//button[@name='button_confirm']" position="after">
+                <xpath expr="//field[@name='order_line']" position="before">
                     <button name="%(multiple_product.add_product_wizard)d" string="Add Multiple Product" type="action"
                             class="btn btn-primary"/>
                 </xpath>
